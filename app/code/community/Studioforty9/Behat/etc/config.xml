@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Studioforty9_Behat>
+            <version>0.0.1</version>
+        </Studioforty9_Behat>
+    </modules>
+    <global>
+        <helpers>
+            <studioforty9_behat>
+                <class>Studioforty9_Behat_Helper</class>
+            </studioforty9_behat>
+        </helpers>
+    </global>
+    <default>
+        <studioforty9_behat>
+            <page_elements_desktop>
+                <logo>.logo .large</logo>
+                <navigation>#header-nav .nav-primary</navigation>
+                <footer_links>.footer .links</footer_links>
+                <footer_subscription_form>.footer #newsletter-validate-detail</footer_subscription_form>
+            </page_elements_desktop>
+            <page_elements_tablet_large>
+                <logo>.logo .large</logo>
+                <navigation>#header-nav .nav-primary</navigation>
+                <footer_links>.footer .links</footer_links>
+                <footer_subscription_form>.footer #newsletter-validate-detail</footer_subscription_form>
+            </page_elements_tablet_large>
+            <page_elements_tablet_small>
+                <logo>.logo .small</logo>
+                <navigation>#nav .nav-primary</navigation>
+                <navigation_toggle>a.skip-link.skip-nav</navigation_toggle>
+                <footer_links>.footer .links</footer_links>
+                <footer_subscription_form>.footer #newsletter-validate-detail</footer_subscription_form>
+            </page_elements_tablet_small>
+            <page_elements_mobile>
+                <logo>.logo .small</logo>
+                <navigation>#nav .nav-primary</navigation>
+                <navigation_toggle>a.skip-link.skip-nav</navigation_toggle>
+                <footer_links>.footer .links</footer_links>
+                <footer_subscription_form>.footer #newsletter-validate-detail</footer_subscription_form>
+            </page_elements_mobile>
+        </studioforty9_behat>
+    </default>
+</config>
