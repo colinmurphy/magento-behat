@@ -24,7 +24,7 @@
                     <show_in_default>1</show_in_default>
                     <show_in_website>1</show_in_website>
                     <show_in_store>1</show_in_store>
-                    <expanded>1</expanded>
+                    <expanded>0</expanded>
                     <fields>
                         <logo translate="label">
                             <label>Logo</label>
@@ -34,14 +34,14 @@
                             <show_in_website>1</show_in_website>
                             <show_in_store>1</show_in_store>
                         </logo>
-                        <navigation_bar translate="label">
-                            <label>Navigation Bar</label>
+                        <navigation_menu translate="label">
+                            <label>Navigation Menu</label>
                             <frontend_type>text</frontend_type>
                             <sort_order>20</sort_order>
                             <show_in_default>1</show_in_default>
                             <show_in_website>1</show_in_website>
                             <show_in_store>1</show_in_store>
-                        </navigation_bar>
+                        </navigation_menu>
                         <footer_links translate="label">
                             <label>Footer Links</label>
                             <frontend_type>text</frontend_type>
@@ -58,18 +58,74 @@
                             <show_in_website>1</show_in_website>
                             <show_in_store>1</show_in_store>
                         </footer_subscription_form>
+                        <account_link translate="label">
+                            <label>Header Account Link</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>50</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </account_link>
+                        <account_menu translate="label">
+                            <label>Header Account Menu</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>60</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </account_menu>
+                        <cart_link translate="label">
+                            <label>Header Cart Link</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>70</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </cart_link>
+                        <cart_menu translate="label">
+                            <label>Header Cart Menu</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>80</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </cart_menu>
+                        <search_bar translate="label">
+                            <label>Search Bar</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>90</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </search_bar>
+                        <search_input translate="label">
+                            <label>Search Input</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>110</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </search_input>
+                        <search_button translate="label">
+                            <label>Search Button</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>110</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </search_button>
                     </fields>
                 </page_elements_desktop>
 
                 <page_elements_tablet_large translate="label comment">
                     <label>Large Tablet Page Elements</label>
-                    <comment>CSS selector of page elements for the desktop site.</comment>
+                    <comment>CSS selector of page elements for the large tablet site.</comment>
                     <frontend_type>text</frontend_type>
-                    <sort_order>10</sort_order>
+                    <sort_order>20</sort_order>
                     <show_in_default>1</show_in_default>
                     <show_in_website>1</show_in_website>
                     <show_in_store>1</show_in_store>
-                    <expanded>1</expanded>
+                    <expanded>0</expanded>
                     <fields>
                         <logo translate="label">
                             <label>Logo</label>
@@ -79,14 +135,14 @@
                             <show_in_website>1</show_in_website>
                             <show_in_store>1</show_in_store>
                         </logo>
-                        <navigation_bar translate="label">
-                            <label>Navigation Bar</label>
+                        <navigation_menu translate="label">
+                            <label>Navigation Menu</label>
                             <frontend_type>text</frontend_type>
                             <sort_order>20</sort_order>
                             <show_in_default>1</show_in_default>
                             <show_in_website>1</show_in_website>
                             <show_in_store>1</show_in_store>
-                        </navigation_bar>
+                        </navigation_menu>
                         <footer_links translate="label">
                             <label>Footer Links</label>
                             <frontend_type>text</frontend_type>
@@ -103,6 +159,62 @@
                             <show_in_website>1</show_in_website>
                             <show_in_store>1</show_in_store>
                         </footer_subscription_form>
+                        <account_link translate="label">
+                            <label>Header Account Link</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>50</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </account_link>
+                        <account_menu translate="label">
+                            <label>Header Account Menu</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>60</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </account_menu>
+                        <cart_link translate="label">
+                            <label>Header Cart Link</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>70</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </cart_link>
+                        <cart_menu translate="label">
+                            <label>Header Cart Menu</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>80</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </cart_menu>
+                        <search_bar translate="label">
+                            <label>Search Bar</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>90</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </search_bar>
+                        <search_input translate="label">
+                            <label>Search Input</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>110</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </search_input>
+                        <search_button translate="label">
+                            <label>Search Button</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>110</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </search_button>
                     </fields>
                 </page_elements_tablet_large>
 
@@ -114,7 +226,7 @@
                     <show_in_default>1</show_in_default>
                     <show_in_website>1</show_in_website>
                     <show_in_store>1</show_in_store>
-                    <expanded>1</expanded>
+                    <expanded>0</expanded>
                     <fields>
                         <logo translate="label">
                             <label>Logo</label>
@@ -124,22 +236,22 @@
                             <show_in_website>1</show_in_website>
                             <show_in_store>1</show_in_store>
                         </logo>
-                        <navigation_bar translate="label">
-                            <label>Navigation Bar</label>
+                        <navigation_menu translate="label">
+                            <label>Navigation Menu</label>
                             <frontend_type>text</frontend_type>
                             <sort_order>20</sort_order>
                             <show_in_default>1</show_in_default>
                             <show_in_website>1</show_in_website>
                             <show_in_store>1</show_in_store>
-                        </navigation_bar>
-                        <navigation_toggle translate="label">
-                            <label>Navigation Toggle</label>
+                        </navigation_menu>
+                        <navigation_link translate="label">
+                            <label>Navigation Link</label>
                             <frontend_type>text</frontend_type>
                             <sort_order>30</sort_order>
                             <show_in_default>1</show_in_default>
                             <show_in_website>1</show_in_website>
                             <show_in_store>1</show_in_store>
-                        </navigation_toggle>
+                        </navigation_link>
                         <footer_links translate="label">
                             <label>Footer Links</label>
                             <frontend_type>text</frontend_type>
@@ -151,11 +263,75 @@
                         <footer_subscription_form translate="label">
                             <label>Footer Subscription Form</label>
                             <frontend_type>text</frontend_type>
-                            <sort_order>50</sort_order>
+                            <sort_order>45</sort_order>
                             <show_in_default>1</show_in_default>
                             <show_in_website>1</show_in_website>
                             <show_in_store>1</show_in_store>
                         </footer_subscription_form>
+                        <account_link translate="label">
+                            <label>Header Account Link</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>50</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </account_link>
+                        <account_menu translate="label">
+                            <label>Header Account Menu</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>60</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </account_menu>
+                        <cart_link translate="label">
+                            <label>Header Cart Link</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>70</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </cart_link>
+                        <cart_menu translate="label">
+                            <label>Header Cart Menu</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>80</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </cart_menu>
+                        <search_link translate="label">
+                            <label>Header Search Link</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>85</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </search_link>
+                        <search_bar translate="label">
+                            <label>Search Bar</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>90</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </search_bar>
+                        <search_input translate="label">
+                            <label>Search Input</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>110</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </search_input>
+                        <search_button translate="label">
+                            <label>Search Button</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>110</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </search_button>
                     </fields>
                 </page_elements_tablet_small>
 
@@ -167,7 +343,7 @@
                     <show_in_default>1</show_in_default>
                     <show_in_website>1</show_in_website>
                     <show_in_store>1</show_in_store>
-                    <expanded>1</expanded>
+                    <expanded>0</expanded>
                     <fields>
                         <logo translate="label">
                             <label>Logo</label>
@@ -177,22 +353,22 @@
                             <show_in_website>1</show_in_website>
                             <show_in_store>1</show_in_store>
                         </logo>
-                        <navigation_bar translate="label">
-                            <label>Navigation Bar</label>
+                        <navigation_menu translate="label">
+                            <label>Navigation Menu</label>
                             <frontend_type>text</frontend_type>
                             <sort_order>20</sort_order>
                             <show_in_default>1</show_in_default>
                             <show_in_website>1</show_in_website>
                             <show_in_store>1</show_in_store>
-                        </navigation_bar>
-                        <navigation_toggle translate="label">
-                            <label>Navigation Toggle</label>
+                        </navigation_menu>
+                        <navigation_link translate="label">
+                            <label>Navigation Link</label>
                             <frontend_type>text</frontend_type>
                             <sort_order>30</sort_order>
                             <show_in_default>1</show_in_default>
                             <show_in_website>1</show_in_website>
                             <show_in_store>1</show_in_store>
-                        </navigation_toggle>
+                        </navigation_link>
                         <footer_links translate="label">
                             <label>Footer Links</label>
                             <frontend_type>text</frontend_type>
@@ -209,6 +385,70 @@
                             <show_in_website>1</show_in_website>
                             <show_in_store>1</show_in_store>
                         </footer_subscription_form>
+                        <account_link translate="label">
+                            <label>Header Account Link</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>50</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </account_link>
+                        <account_menu translate="label">
+                            <label>Header Account Menu</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>60</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </account_menu>
+                        <cart_link translate="label">
+                            <label>Header Cart Link</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>70</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </cart_link>
+                        <cart_menu translate="label">
+                            <label>Header Cart Menu</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>80</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </cart_menu>
+                        <search_link translate="label">
+                            <label>Header Search Link</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>85</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </search_link>
+                        <search_bar translate="label">
+                            <label>Search Bar</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>90</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </search_bar>
+                        <search_input translate="label">
+                            <label>Search Input</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>110</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </search_input>
+                        <search_button translate="label">
+                            <label>Search Button</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>110</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </search_button>
                     </fields>
                 </page_elements_mobile>
             </groups>

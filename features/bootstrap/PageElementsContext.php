@@ -4,7 +4,7 @@ use Behat\MinkExtension\Context\MinkContext;
 class PageElementsContext extends MinkContext
 {
 
-    use MagentoTrait, DeviceTrait, VisibilityTrait;
+    use MagentoTrait, ClickTrait, DeviceTrait, VisibilityTrait;
 
     /**
      * @var string
@@ -18,8 +18,15 @@ class PageElementsContext extends MinkContext
      */
     public function getCssSelector($path)
     {
-        $prefix = "studioforty9_behat/page_elements_" . $this->getDevice() . "/";
-        return Mage::getStoreConfig($prefix . $path);
+        $configPath = "studioforty9_behat/page_elements_" . $this->getDevice() . "/" . $path;
+        $value = Mage::getStoreConfig($configPath);
+
+        if (! $value) {
+            throw new \Behat\Mink\Exception\ExpectationException(
+                "Magento configuration '$configPath' was not found", $this->getSession()
+            );
+        }
+        return $value;
     }
 
     /**
@@ -33,26 +40,13 @@ class PageElementsContext extends MinkContext
     }
 
     /**
-     * @When I toggle the navigation menu
+     * @When I enter a search string
      */
-    public function iToggleTheNavigationMenu()
+    public function iEnterASearchString()
     {
-        $this->clickElement($this->getCssSelector("navigation_toggle"));
-        $this->iWaitSeconds(3);
+        $selector = $this->getCssSelector("search_input");
+        $el = $this->getSession()->getPage()->find("css", $selector);
+        $el->setValue("a");
     }
 
-    /**
-     * @param $path
-     *
-     * @throws Exception
-     */
-    public function clickElement($path)
-    {
-        try {
-            $element = $this->getSession()->getPage()->find("css", $path);
-            $element->click();
-        } catch (Exception $e) {
-            throw new Exception($e->getMessage());
-        }
-    }
 }

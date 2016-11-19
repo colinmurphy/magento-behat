@@ -16,29 +16,62 @@
         <studioforty9_behat>
             <page_elements_desktop>
                 <logo>.logo .large</logo>
-                <navigation_bar>#header-nav .nav-primary</navigation_bar>
+                <navigation_menu>#header-nav .nav-primary</navigation_menu>
                 <footer_links>.footer .links</footer_links>
                 <footer_subscription_form>.footer #newsletter-validate-detail</footer_subscription_form>
+                <account_link>.account-cart-wrapper .skip-link.skip-account</account_link>
+                <account_menu>#header-account</account_menu>
+                <cart_link>.account-cart-wrapper .skip-link.skip-cart</cart_link>
+                <cart_menu>#header-cart</cart_menu>
+                <search_bar>#search_mini_form</search_bar>
+                <search_input>#search_mini_form input#search</search_input>
+                <search_button>#search_mini_form .search-button</search_button>
             </page_elements_desktop>
+
             <page_elements_tablet_large>
                 <logo>.logo .large</logo>
-                <navigation_bar>#header-nav .nav-primary</navigation_bar>
+                <navigation_menu>#header-nav .nav-primary</navigation_menu>
                 <footer_links>.footer .links</footer_links>
                 <footer_subscription_form>.footer #newsletter-validate-detail</footer_subscription_form>
+                <account_link>.account-cart-wrapper .skip-link.skip-account</account_link>
+                <account_menu>#header-account</account_menu>
+                <cart_link>.account-cart-wrapper .skip-link.skip-cart</cart_link>
+                <cart_menu>#header-cart</cart_menu>
+                <search_bar>#search_mini_form</search_bar>
+                <search_input>#search_mini_form input#search</search_input>
+                <search_button>#search_mini_form .search-button</search_button>
             </page_elements_tablet_large>
+
             <page_elements_tablet_small>
                 <logo>.logo .small</logo>
-                <navigation_bar>#nav .nav-primary</navigation_bar>
-                <navigation_toggle>a.skip-link.skip-nav</navigation_toggle>
+                <navigation_menu>#nav .nav-primary</navigation_menu>
+                <navigation_link>a.skip-link.skip-nav</navigation_link>
                 <footer_links>.footer .links</footer_links>
                 <footer_subscription_form>.footer #newsletter-validate-detail</footer_subscription_form>
+                <account_link>.account-cart-wrapper .skip-link.skip-account</account_link>
+                <account_menu>#header-account</account_menu>
+                <cart_link>.account-cart-wrapper .skip-link.skip-cart</cart_link>
+                <cart_menu>#header-cart</cart_menu>
+                <search_link>.skip-link.skip-search</search_link>
+                <search_bar>#header-search</search_bar>
+                <search_input>#search_mini_form input#search</search_input>
+                <search_button>#search_mini_form .search-button</search_button>
             </page_elements_tablet_small>
+
             <page_elements_mobile>
                 <logo>.logo .small</logo>
-                <navigation_bar>#nav .nav-primary</navigation_bar>
-                <navigation_toggle>a.skip-link.skip-nav</navigation_toggle>
+                <navigation_menu>#nav .nav-primary</navigation_menu>
+                <navigation_link>a.skip-link.skip-nav</navigation_link>
                 <footer_links>.footer .links</footer_links>
                 <footer_subscription_form>.footer #newsletter-validate-detail</footer_subscription_form>
+                <account_link>.account-cart-wrapper .skip-link.skip-account</account_link>
+                <account_menu>#header-account</account_menu>
+                <cart_link>.account-cart-wrapper .skip-link.skip-cart</cart_link>
+                <cart_menu>#header-cart</cart_menu>
+                <search_link>.skip-link.skip-search</search_link>
+                <search_bar>#header-search</search_bar>
+                <search_input>#search_mini_form input#search</search_input>
+                <search_button>#search_mini_form .search-button</search_button>
             </page_elements_mobile>
         </studioforty9_behat>
     </default>
