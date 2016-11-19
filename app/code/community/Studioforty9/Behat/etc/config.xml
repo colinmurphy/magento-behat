@@ -16,26 +16,26 @@
         <studioforty9_behat>
             <page_elements_desktop>
                 <logo>.logo .large</logo>
-                <navigation>#header-nav .nav-primary</navigation>
+                <navigation_bar>#header-nav .nav-primary</navigation_bar>
                 <footer_links>.footer .links</footer_links>
                 <footer_subscription_form>.footer #newsletter-validate-detail</footer_subscription_form>
             </page_elements_desktop>
             <page_elements_tablet_large>
                 <logo>.logo .large</logo>
-                <navigation>#header-nav .nav-primary</navigation>
+                <navigation_bar>#header-nav .nav-primary</navigation_bar>
                 <footer_links>.footer .links</footer_links>
                 <footer_subscription_form>.footer #newsletter-validate-detail</footer_subscription_form>
             </page_elements_tablet_large>
             <page_elements_tablet_small>
                 <logo>.logo .small</logo>
-                <navigation>#nav .nav-primary</navigation>
+                <navigation_bar>#nav .nav-primary</navigation_bar>
                 <navigation_toggle>a.skip-link.skip-nav</navigation_toggle>
                 <footer_links>.footer .links</footer_links>
                 <footer_subscription_form>.footer #newsletter-validate-detail</footer_subscription_form>
             </page_elements_tablet_small>
             <page_elements_mobile>
                 <logo>.logo .small</logo>
-                <navigation>#nav .nav-primary</navigation>
+                <navigation_bar>#nav .nav-primary</navigation_bar>
                 <navigation_toggle>a.skip-link.skip-nav</navigation_toggle>
                 <footer_links>.footer .links</footer_links>
                 <footer_subscription_form>.footer #newsletter-validate-detail</footer_subscription_form>

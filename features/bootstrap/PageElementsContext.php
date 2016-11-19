@@ -1,22 +1,15 @@
 <?php
+use Behat\MinkExtension\Context\MinkContext;
 
-class PageElementsContext extends MagentoContext
+class PageElementsContext extends MinkContext
 {
 
-    use DeviceTrait, VisibilityTrait;
+    use MagentoTrait, DeviceTrait, VisibilityTrait;
 
     /**
      * @var string
      */
     protected $_configPrefix = "studioforty9_behat/page_elements/";
-
-    /**
-     * @return string
-     */
-    public function getConfigPrefix()
-    {
-        return "studioforty9_behat/page_elements_" . self::$_device . "/";
-    }
 
     /**
      * @param $path
@@ -25,39 +18,18 @@ class PageElementsContext extends MagentoContext
      */
     public function getCssSelector($path)
     {
-        return Mage::getStoreConfig($this->getConfigPrefix() . $path);
+        $prefix = "studioforty9_behat/page_elements_" . $this->getDevice() . "/";
+        return Mage::getStoreConfig($prefix . $path);
     }
 
     /**
-     * @Then /^I should (see|not see) a logo$/
+     * @Then /^I should (see|not see) (a|the) ([^"]*)$/
      */
-    public function iShouldSeeALogo($action)
+    public function iShouldSeePageElement($action, $verb, $element)
     {
-        $this->checkElementVisibility($this->getCssSelector("logo"), $action === "see");
-    }
-
-    /**
-     * @Then /^I should (see|not see) the navigation bar$/
-     */
-    public function iShouldViewNavigationBar($action)
-    {
-        $this->checkElementVisibility($this->getCssSelector("navigation"), $action === "see");
-    }
-
-    /**
-     * @Then /^I should (see|not see) the footer links$/
-     */
-    public function iShouldSeeTheFooterLinks($action)
-    {
-        $this->checkElementVisibility($this->getCssSelector("footer_links"), $action === "see");
-    }
-
-    /**
-     * @Then /^I should (see|not see) the footer subscription form$/
-     */
-    public function iShouldSeeTheFooterSubscriptionForm($action)
-    {
-        $this->checkElementVisibility($this->getCssSelector("footer_subscription_form"), $action === "see");
+        $visible = ($action === "see") ? true : false;
+        $element = strtolower(str_replace(" ", "_", $element));
+        $this->checkElementVisibility($this->getCssSelector($element), $visible);
     }
 
     /**
@@ -67,5 +39,20 @@ class PageElementsContext extends MagentoContext
     {
         $this->clickElement($this->getCssSelector("navigation_toggle"));
         $this->iWaitSeconds(3);
+    }
+
+    /**
+     * @param $path
+     *
+     * @throws Exception
+     */
+    public function clickElement($path)
+    {
+        try {
+            $element = $this->getSession()->getPage()->find("css", $path);
+            $element->click();
+        } catch (Exception $e) {
+            throw new Exception($e->getMessage());
+        }
     }
 }

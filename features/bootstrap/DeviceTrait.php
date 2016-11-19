@@ -1,12 +1,16 @@
 <?php
 
-
 trait DeviceTrait
 {
     /**
      * @var string
      */
     protected static $_device = "desktop";
+
+    public function getDevice()
+    {
+        return self::$_device;
+    }
 
     /**
      * Sets the device to be used in the config path to get the CSS selector

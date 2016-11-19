@@ -34,14 +34,14 @@
                             <show_in_website>1</show_in_website>
                             <show_in_store>1</show_in_store>
                         </logo>
-                        <navigation translate="label">
-                            <label>Navigation</label>
+                        <navigation_bar translate="label">
+                            <label>Navigation Bar</label>
                             <frontend_type>text</frontend_type>
                             <sort_order>20</sort_order>
                             <show_in_default>1</show_in_default>
                             <show_in_website>1</show_in_website>
                             <show_in_store>1</show_in_store>
-                        </navigation>
+                        </navigation_bar>
                         <footer_links translate="label">
                             <label>Footer Links</label>
                             <frontend_type>text</frontend_type>
@@ -79,14 +79,14 @@
                             <show_in_website>1</show_in_website>
                             <show_in_store>1</show_in_store>
                         </logo>
-                        <navigation translate="label">
-                            <label>Navigation</label>
+                        <navigation_bar translate="label">
+                            <label>Navigation Bar</label>
                             <frontend_type>text</frontend_type>
                             <sort_order>20</sort_order>
                             <show_in_default>1</show_in_default>
                             <show_in_website>1</show_in_website>
                             <show_in_store>1</show_in_store>
-                        </navigation>
+                        </navigation_bar>
                         <footer_links translate="label">
                             <label>Footer Links</label>
                             <frontend_type>text</frontend_type>
@@ -124,14 +124,14 @@
                             <show_in_website>1</show_in_website>
                             <show_in_store>1</show_in_store>
                         </logo>
-                        <navigation translate="label">
-                            <label>Navigation</label>
+                        <navigation_bar translate="label">
+                            <label>Navigation Bar</label>
                             <frontend_type>text</frontend_type>
                             <sort_order>20</sort_order>
                             <show_in_default>1</show_in_default>
                             <show_in_website>1</show_in_website>
                             <show_in_store>1</show_in_store>
-                        </navigation>
+                        </navigation_bar>
                         <navigation_toggle translate="label">
                             <label>Navigation Toggle</label>
                             <frontend_type>text</frontend_type>
@@ -177,14 +177,14 @@
                             <show_in_website>1</show_in_website>
                             <show_in_store>1</show_in_store>
                         </logo>
-                        <navigation translate="label">
-                            <label>Navigation</label>
+                        <navigation_bar translate="label">
+                            <label>Navigation Bar</label>
                             <frontend_type>text</frontend_type>
                             <sort_order>20</sort_order>
                             <show_in_default>1</show_in_default>
                             <show_in_website>1</show_in_website>
                             <show_in_store>1</show_in_store>
-                        </navigation>
+                        </navigation_bar>
                         <navigation_toggle translate="label">
                             <label>Navigation Toggle</label>
                             <frontend_type>text</frontend_type>

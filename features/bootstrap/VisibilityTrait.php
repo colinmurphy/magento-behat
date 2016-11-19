@@ -16,7 +16,6 @@ trait VisibilityTrait
         } else {
             $this->checkVisibilityOnPage($selector, "not visible");
         }
-        sleep(1);
     }
 
     /**
