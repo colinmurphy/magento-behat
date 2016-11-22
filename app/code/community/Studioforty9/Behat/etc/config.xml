@@ -14,6 +14,12 @@
     </global>
     <default>
         <studioforty9_behat>
+
+            <account>
+                <login_email>colin@studioforty9.com</login_email>
+                <login_password>password123</login_password>
+            </account>
+
             <page_elements_desktop>
                 <logo>.logo .large</logo>
                 <navigation_menu>#header-nav .nav-primary</navigation_menu>

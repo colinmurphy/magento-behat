@@ -1,6 +1,7 @@
 @page_elements @javascript
 Feature: Checking Page Elements
-  As a web user I should see the following core elements on a page.
+  As an qa user
+  I should see the following core elements on a page.
 
   @desktop
   Scenario: Checking core page elements exist on a desktop device
@@ -10,7 +11,7 @@ Feature: Checking Page Elements
     Then I should see the footer links
     Then I should see the footer subscription form
 
-  @desktop @account
+  @desktop
   Scenario: Checking account link and menu works on a desktop device
     Given I am on "/"
     Then I should see the account link
@@ -19,7 +20,7 @@ Feature: Checking Page Elements
     When I follow "My Account"
     Then I should be on "/customer/account/login/"
 
-  @desktop @search
+  @desktop
   Scenario: Checking search works on a desktop device
     Given I am on "/"
     Then I should see the search bar
@@ -27,7 +28,7 @@ Feature: Checking Page Elements
     And I click the search button
     Then I should be on "/catalogsearch/result/"
 
-  @desktop @cart
+  @desktop
   Scenario: Checking cart link and menu works on a desktop device
     Given I am on "/"
     Then I should see the cart link
@@ -42,7 +43,7 @@ Feature: Checking Page Elements
     Then I should see the footer links
     Then I should see the footer subscription form
 
-  @tablet_large @mink:tablet_large_session @account
+  @tablet_large @mink:tablet_large_session
   Scenario: Checking account link and menu works on a large tablet device
     Given I am on "/"
     Then I should see the account link
@@ -51,7 +52,7 @@ Feature: Checking Page Elements
     When I follow "My Account"
     Then I should be on "/customer/account/login/"
 
-  @tablet_large @mink:tablet_large_session @search
+  @tablet_large @mink:tablet_large_session
   Scenario: Checking search works on a large tablet device
     Given I am on "/"
     Then I should see the search bar
@@ -59,7 +60,7 @@ Feature: Checking Page Elements
     And I click the search button
     Then I should be on "/catalogsearch/result/"
 
-  @tablet_large @mink:tablet_large_session @cart
+  @tablet_large @mink:tablet_large_session
   Scenario: Checking cart link and menu works on a large tablet device
     Given I am on "/"
     Then I should see the cart link
@@ -81,7 +82,7 @@ Feature: Checking Page Elements
     When I click the navigation link
     Then I should not see the navigation menu
 
-  @tablet_small @mink:tablet_small_session @account
+  @tablet_small @mink:tablet_small_session
   Scenario: Checking account link and menu works on a small tablet device
     Given I am on "/"
     Then I should see the account link
@@ -90,7 +91,7 @@ Feature: Checking Page Elements
     When I follow "My Account"
     Then I should be on "/customer/account/login/"
 
-  @tablet_small @mink:tablet_small_session @search
+  @tablet_small @mink:tablet_small_session
   Scenario: Checking search works on a small tablet device
     Given I am on "/"
     Then I click the search link
@@ -99,7 +100,7 @@ Feature: Checking Page Elements
     And I click the search button
     Then I should be on "/catalogsearch/result/"
 
-  @tablet_small @mink:tablet_small_session @cart
+  @tablet_small @mink:tablet_small_session
   Scenario: Checking cart link and menu works on a small tablet device
     Given I am on "/"
     Then I should see the cart link
@@ -121,7 +122,7 @@ Feature: Checking Page Elements
     When I click the navigation link
     Then I should not see the navigation menu
 
-  @mobile @mink:mobile_session @account
+  @mobile @mink:mobile_session
   Scenario: Checking account link and menu works on a mobile device
     Given I am on "/"
     Then I should see the account link
@@ -130,7 +131,7 @@ Feature: Checking Page Elements
     When I follow "My Account"
     Then I should be on "/customer/account/login/"
 
-  @mobile @mink:mobile_session @search
+  @mobile @mink:mobile_session
   Scenario: Checking search works on a mobile device
     Given I am on "/"
     Then I click the search link
@@ -139,7 +140,7 @@ Feature: Checking Page Elements
     And I click the search button
     Then I should be on "/catalogsearch/result/"
 
-  @mobile @mink:mobile_session @cart
+  @mobile @mink:mobile_session
   Scenario: Checking cart link and menu works on a mobile device
     Given I am on "/"
     Then I should see the cart link

@@ -21,7 +21,7 @@ class PageElementsContext extends MinkContext
         $configPath = "studioforty9_behat/page_elements_" . $this->getDevice() . "/" . $path;
         $value = Mage::getStoreConfig($configPath);
 
-        if (! $value) {
+        if (!$value) {
             throw new \Behat\Mink\Exception\ExpectationException(
                 "Magento configuration '$configPath' was not found", $this->getSession()
             );
