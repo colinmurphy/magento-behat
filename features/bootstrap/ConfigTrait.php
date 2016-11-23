@@ -1,13 +1,12 @@
 <?php
 
-
 trait ConfigTrait
 {
 
     /**
      * @var string
      */
-    protected $_configPrefix = "studioforty9_behat/page_elements/";
+    protected $_configPrefix = "";
 
     /**
      * @param $prefix
@@ -29,6 +28,7 @@ trait ConfigTrait
      * @param $path
      *
      * @return mixed
+     * @throws \Behat\Mink\Exception\ExpectationException
      */
     public function getCssSelector($path)
     {

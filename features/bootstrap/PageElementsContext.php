@@ -4,29 +4,11 @@ use Behat\MinkExtension\Context\MinkContext;
 class PageElementsContext extends MinkContext
 {
 
-    use MagentoTrait, ClickTrait, DeviceTrait, VisibilityTrait;
+    use MagentoTrait, ConfigTrait, DeviceTrait, VisibilityTrait;
 
-    /**
-     * @var string
-     */
-    protected $_configPrefix = "studioforty9_behat/page_elements/";
-
-    /**
-     * @param $path
-     *
-     * @return mixed
-     */
-    public function getCssSelector($path)
+    public function setDeviceConfigPath()
     {
-        $configPath = "studioforty9_behat/page_elements_" . $this->getDevice() . "/" . $path;
-        $value = Mage::getStoreConfig($configPath);
-
-        if (!$value) {
-            throw new \Behat\Mink\Exception\ExpectationException(
-                "Magento configuration '$configPath' was not found", $this->getSession()
-            );
-        }
-        return $value;
+        $this->setConfigPathPrefix("studioforty9_behat/page_elements_" . $this->getDevice() . "/");
     }
 
     /**
@@ -34,9 +16,10 @@ class PageElementsContext extends MinkContext
      */
     public function iShouldSeePageElement($action, $verb, $element)
     {
+        $this->setDeviceConfigPath();
         $visible = ($action === "see") ? true : false;
-        $element = strtolower(str_replace(" ", "_", $element));
-        $this->checkElementVisibility($this->getCssSelector($element), $visible);
+        $selector = strtolower(str_replace(" ", "_", $element));
+        $this->checkElementVisibility($this->getCssSelector($selector), $visible);
     }
 
     /**
@@ -44,9 +27,36 @@ class PageElementsContext extends MinkContext
      */
     public function iEnterASearchString()
     {
+        $this->setDeviceConfigPath();
         $selector = $this->getCssSelector("search_input");
         $el = $this->getSession()->getPage()->find("css", $selector);
         $el->setValue("a");
+    }
+
+    /**
+     * @When /^I click the ([^"]*)$/
+     */
+    public function iClickPageElement($element)
+    {
+        $this->setDeviceConfigPath();
+        $element = strtolower(str_replace(" ", "_", $element));
+        $this->clickElement($this->getCssSelector($element));
+        $this->iWaitSeconds(1);
+    }
+
+    /**
+     * @param $selector
+     *
+     * @throws Exception
+     */
+    public function clickElement($selector)
+    {
+        try {
+            $element = $this->getSession()->getPage()->find("css", $selector);
+            $element->click();
+        } catch (Exception $e) {
+            throw new Exception($e->getMessage());
+        }
     }
 
 }

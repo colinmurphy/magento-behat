@@ -9,7 +9,7 @@ trait DeviceTrait
 
     public function getDevice()
     {
-        return self::$_device;
+        return static::$_device;
     }
 
     /**
