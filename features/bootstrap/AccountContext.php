@@ -15,7 +15,7 @@ class AccountContext extends MinkContext
     }
 
     /**
-     * @Given /^I am on the account page$/
+     * @Given /^I (should be|am) on the account page$/
      */
     public function iAmOnTheMainAccountPage()
     {
@@ -27,7 +27,8 @@ class AccountContext extends MinkContext
      */
     public function iAmOnTheAccountPage($page = "")
     {
-        $this->visit("/customer/account/", $page . "/");
+        $page = ($page == "register") ? "create" : $page;
+        $this->visit("/customer/account/" . $page . "/");
     }
 
     /**
@@ -45,8 +46,24 @@ class AccountContext extends MinkContext
     public function iFillInMyLoginDetails()
     {
         $prefix = $this->getConfigPathPrefix();
-        $this->fillField('Email Address', $this->getCssSelector($prefix . "login_email"));
-        $this->fillField('Password', $this->getCssSelector($prefix . "login_password"));
+        $this->fillField('email', $this->getCssSelector($prefix . "login_email"));
+        $this->fillField('pass', $this->getCssSelector($prefix . "login_password"));
+    }
+
+    /**
+     * @Given I press the login button
+     */
+    public function iPressTheLoginButton()
+    {
+       $this->pressButton("send2");
+    }
+
+    /**
+     * @Given I press the register button
+     */
+    public function iPressTheRegisterButton()
+    {
+        $this->pressButton("Register");
     }
 
     /**
@@ -55,8 +72,11 @@ class AccountContext extends MinkContext
     public function iFillInMyRegisterDetails()
     {
         $prefix = $this->getConfigPathPrefix();
-        $this->fillField('Email Address', $this->getCssSelector($prefix . "login_email"));
-        $this->fillField('Password', $this->getCssSelector($prefix . "login_password"));
+        $this->fillField('firstname', $prefix . "register_first_name");
+        $this->fillField('lastname', $prefix . "register_last_name");
+        $this->fillField('email', $prefix . "email");
+        $this->fillField('password', $prefix . "password");
+        $this->fillField('confirmation', $prefix . "password");
     }
 
     /**
