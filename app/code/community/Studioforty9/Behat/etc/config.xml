@@ -18,6 +18,7 @@
             <account>
                 <login_email>colin@studioforty9.com</login_email>
                 <login_password>password123</login_password>
+                <welcome_message>Welcome</welcome_message>
             </account>
 
             <page_elements_desktop>

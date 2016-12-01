@@ -4,11 +4,14 @@ use Behat\MinkExtension\Context\MinkContext;
 class PageElementsContext extends MinkContext
 {
 
-    use MagentoTrait, ConfigTrait, DeviceTrait, VisibilityTrait;
+    use MagentoTrait, ClickTrait, ConfigTrait, DeviceTrait, VisibilityTrait;
 
-    public function setDeviceConfigPath()
+    /**
+     * @return string
+     */
+    public function getConfigPrefixPath()
     {
-        $this->setConfigPathPrefix("studioforty9_behat/page_elements_" . $this->getDevice() . "/");
+        return "studioforty9_behat/page_elements_" . $this->getDevice() . "/";
     }
 
     /**
@@ -16,10 +19,10 @@ class PageElementsContext extends MinkContext
      */
     public function iShouldSeePageElement($action, $verb, $element)
     {
-        $this->setDeviceConfigPath();
         $visible = ($action === "see") ? true : false;
         $selector = strtolower(str_replace(" ", "_", $element));
-        $this->checkElementVisibility($this->getCssSelector($selector), $visible);
+        $path = $this->getConfigPrefixPath() . $selector;
+        $this->checkElementVisibility($this->getCssSelector($path), $visible);
     }
 
     /**
@@ -27,8 +30,8 @@ class PageElementsContext extends MinkContext
      */
     public function iEnterASearchString()
     {
-        $this->setDeviceConfigPath();
-        $selector = $this->getCssSelector("search_input");
+        $path = $this->getConfigPrefixPath() . "search_input";
+        $selector = $this->getCssSelector($path);
         $el = $this->getSession()->getPage()->find("css", $selector);
         $el->setValue("a");
     }
@@ -38,25 +41,10 @@ class PageElementsContext extends MinkContext
      */
     public function iClickPageElement($element)
     {
-        $this->setDeviceConfigPath();
         $element = strtolower(str_replace(" ", "_", $element));
-        $this->clickElement($this->getCssSelector($element));
+        $path = $this->getConfigPrefixPath() . $element;
+        $this->clickElement($this->getCssSelector($path));
         $this->iWaitSeconds(1);
-    }
-
-    /**
-     * @param $selector
-     *
-     * @throws Exception
-     */
-    public function clickElement($selector)
-    {
-        try {
-            $element = $this->getSession()->getPage()->find("css", $selector);
-            $element->click();
-        } catch (Exception $e) {
-            throw new Exception($e->getMessage());
-        }
     }
 
 }

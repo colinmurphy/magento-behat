@@ -22,11 +22,11 @@ trait DeviceTrait
         $scenario = $scenarioScope->getScenario();
 
         if ($scenario->hasTag("tablet_large")) {
-            self::$_device = "tablet_large";
+            static::$_device = "tablet_large";
         } else if ($scenario->hasTag("tablet_small")) {
-            self::$_device = "tablet_small";
+            static::$_device = "tablet_small";
         } else if ($scenario->hasTag("mobile")) {
-            self::$_device = "mobile";
+            static::$_device = "mobile";
         }
     }
 }

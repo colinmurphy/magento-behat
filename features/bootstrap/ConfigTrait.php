@@ -4,27 +4,6 @@ trait ConfigTrait
 {
 
     /**
-     * @var string
-     */
-    protected $_configPrefix = "";
-
-    /**
-     * @param $prefix
-     */
-    public function setConfigPathPrefix($prefix)
-    {
-        $this->_configPrefix = $prefix;
-    }
-
-    /**
-     * @return string
-     */
-    public function getConfigPathPrefix()
-    {
-        return $this->_configPrefix;
-    }
-
-    /**
      * @param $path
      *
      * @return mixed
@@ -32,12 +11,10 @@ trait ConfigTrait
      */
     public function getCssSelector($path)
     {
-        $configPath = $this->getConfigPathPrefix() . $path;
-        $value = Mage::getStoreConfig($configPath);
-
+        $value = Mage::getStoreConfig($path);
         if (!$value) {
             throw new \Behat\Mink\Exception\ExpectationException(
-                "Magento configuration '$configPath' was not found", $this->getSession()
+                "Magento configuration '$path' was not found", $this->getSession()
             );
         }
         return $value;

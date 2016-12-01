@@ -41,6 +41,15 @@
                             <show_in_website>1</show_in_website>
                             <show_in_store>1</show_in_store>
                         </login_password>
+                        <welcome_message translate="label comment">
+                            <label>Welcome Message</label>
+                            <comment>Text a user should see when they are logged in</comment>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>30</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </welcome_message>
                     </fields>
                 </account>
 
