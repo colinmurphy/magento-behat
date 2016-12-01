@@ -19,4 +19,4 @@ Feature: Checking Account Functionality
     Given I am on the account register page
     And I fill in my register details
     And I press the register button
-    Then I should be on the account page
+    Then I should be registered as a customer

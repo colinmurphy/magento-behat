@@ -7,6 +7,31 @@ class AccountContext extends MinkContext
     use MagentoTrait, ClickTrait, ConfigTrait, DeviceTrait;
 
     /**
+     * Deletes the registered customer after the register scenario
+     *
+     * @AfterScenario
+     */
+    public static function afterScenario(Behat\Behat\Hook\Scope\AfterScenarioScope $scope)
+    {
+        if (!$scope->getScenario()->hasTag("register")) {
+            return false;
+        }
+
+        try {
+            $email = Mage::getStoreConfig("studioforty9_behat/account/register_email");
+            $customer = Mage::getModel("customer/customer");
+            $customer->setWebsiteId(Mage::app()->getStore()->getWebsiteId());
+            $customer->loadByEmail($email);
+            Mage::register('isSecureArea', true);
+            $customer->delete();
+            Mage::unregister('isSecureArea');
+        } catch (Exception $e) {
+            Mage::logException($e);
+            throw new Exception("Couldn't delete customer");
+        }
+    }
+
+    /**
      * @return string
      */
     public function getConfigPathPrefix()
@@ -15,7 +40,7 @@ class AccountContext extends MinkContext
     }
 
     /**
-     * @Given /^I (should be|am) on the account page$/
+     * @Given /^I am on the account page$/
      */
     public function iAmOnTheMainAccountPage()
     {
@@ -29,6 +54,14 @@ class AccountContext extends MinkContext
     {
         $page = ($page == "register") ? "create" : $page;
         $this->visit("/customer/account/" . $page . "/");
+    }
+
+    /**
+     * @Given /^I should be registered as a customer$/
+     */
+    public function iShouldBeRegisterAsACustomer()
+    {
+        return $this->iShouldBeOnTheAccountPage("index");
     }
 
     /**
@@ -55,7 +88,7 @@ class AccountContext extends MinkContext
      */
     public function iPressTheLoginButton()
     {
-       $this->pressButton("send2");
+        $this->pressButton("send2");
     }
 
     /**
@@ -72,11 +105,11 @@ class AccountContext extends MinkContext
     public function iFillInMyRegisterDetails()
     {
         $prefix = $this->getConfigPathPrefix();
-        $this->fillField('firstname', $prefix . "register_first_name");
-        $this->fillField('lastname', $prefix . "register_last_name");
-        $this->fillField('email', $prefix . "email");
-        $this->fillField('password', $prefix . "password");
-        $this->fillField('confirmation', $prefix . "password");
+        $this->fillField('firstname', $this->getCssSelector($prefix . "register_first_name"));
+        $this->fillField('lastname', $this->getCssSelector($prefix . "register_last_name"));
+        $this->fillField('email', $this->getCssSelector($prefix . "register_email"));
+        $this->fillField('password', $this->getCssSelector($prefix . "register_password"));
+        $this->fillField('confirmation', $this->getCssSelector($prefix . "register_password"));
     }
 
     /**
