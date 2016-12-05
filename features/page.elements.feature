@@ -3,9 +3,11 @@ Feature: Checking Page Elements
   As an qa user
   I should see the following core elements on a page.
 
+  Background:
+    Given I am on "/"
+
   @desktop
   Scenario: Checking core page elements exist on a desktop device
-    Given I am on "/"
     Then I should see a logo
     Then I should see the navigation menu
     Then I should see the footer links
@@ -13,7 +15,6 @@ Feature: Checking Page Elements
 
   @desktop
   Scenario: Checking account link and menu works on a desktop device
-    Given I am on "/"
     Then I should see the account link
     When I click the account link
     Then I should see the account menu
@@ -22,7 +23,6 @@ Feature: Checking Page Elements
 
   @desktop
   Scenario: Checking search works on a desktop device
-    Given I am on "/"
     Then I should see the search bar
     When I enter a search string
     And I click the search button
@@ -30,14 +30,12 @@ Feature: Checking Page Elements
 
   @desktop
   Scenario: Checking cart link and menu works on a desktop device
-    Given I am on "/"
     Then I should see the cart link
     When I click the cart link
     Then I should see the cart menu
 
   @tablet_large @mink:tablet_large_session
   Scenario: Checking core page elements exist on a large tablet device
-    Given I am on "/"
     Then I should see a logo
     Then I should see the navigation menu
     Then I should see the footer links
@@ -45,7 +43,6 @@ Feature: Checking Page Elements
 
   @tablet_large @mink:tablet_large_session
   Scenario: Checking account link and menu works on a large tablet device
-    Given I am on "/"
     Then I should see the account link
     When I click the account link
     Then I should see the account menu
@@ -54,7 +51,6 @@ Feature: Checking Page Elements
 
   @tablet_large @mink:tablet_large_session
   Scenario: Checking search works on a large tablet device
-    Given I am on "/"
     Then I should see the search bar
     When I enter a search string
     And I click the search button
@@ -62,21 +58,18 @@ Feature: Checking Page Elements
 
   @tablet_large @mink:tablet_large_session
   Scenario: Checking cart link and menu works on a large tablet device
-    Given I am on "/"
     Then I should see the cart link
     When I click the cart link
     Then I should see the cart menu
 
   @tablet_small @mink:tablet_small_session
   Scenario: Checking core page elements exist on a small tablet device
-    Given I am on "/"
     Then I should see a logo
     Then I should see the footer links
     Then I should see the footer subscription form
 
   @tablet_small @mink:tablet_small_session
   Scenario: Checking navigation menu and link works on a small tablet device
-    Given I am on "/"
     When I click the navigation link
     Then I should see the navigation menu
     When I click the navigation link
@@ -84,7 +77,6 @@ Feature: Checking Page Elements
 
   @tablet_small @mink:tablet_small_session
   Scenario: Checking account link and menu works on a small tablet device
-    Given I am on "/"
     Then I should see the account link
     When I click the account link
     Then I should see the account menu
@@ -93,7 +85,6 @@ Feature: Checking Page Elements
 
   @tablet_small @mink:tablet_small_session
   Scenario: Checking search works on a small tablet device
-    Given I am on "/"
     Then I click the search link
     Then I should see the search bar
     When I enter a search string
@@ -102,21 +93,18 @@ Feature: Checking Page Elements
 
   @tablet_small @mink:tablet_small_session
   Scenario: Checking cart link and menu works on a small tablet device
-    Given I am on "/"
     Then I should see the cart link
     When I click the cart link
     Then I should see the cart menu
 
   @mobile @mink:mobile_session
   Scenario: Checking core page elements exist on a mobile device
-    Given I am on "/"
     Then I should see a logo
     Then I should see the footer links
     Then I should see the footer subscription form
 
   @mobile @mink:mobile_session
   Scenario: Checking navigation menu and link works on a mobile device
-    Given I am on "/"
     When I click the navigation link
     Then I should see the navigation menu
     When I click the navigation link
@@ -124,7 +112,6 @@ Feature: Checking Page Elements
 
   @mobile @mink:mobile_session
   Scenario: Checking account link and menu works on a mobile device
-    Given I am on "/"
     Then I should see the account link
     When I click the account link
     Then I should see the account menu
@@ -133,7 +120,6 @@ Feature: Checking Page Elements
 
   @mobile @mink:mobile_session
   Scenario: Checking search works on a mobile device
-    Given I am on "/"
     Then I click the search link
     Then I should see the search bar
     When I enter a search string
@@ -142,7 +128,6 @@ Feature: Checking Page Elements
 
   @mobile @mink:mobile_session
   Scenario: Checking cart link and menu works on a mobile device
-    Given I am on "/"
     Then I should see the cart link
     When I click the cart link
     Then I should see the cart menu
