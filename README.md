@@ -1,6 +1,10 @@
 # Intro
 For running Behat 3 tests in Magento 1. In beta so info to follow.
 
+# Run tests
+
+You can run all profiles with bin/run_all.sh
+
 # Installation
     {
         "require-dev": {
@@ -30,117 +34,117 @@ For running Behat 3 tests in Magento 1. In beta so info to follow.
     }
     
 # Behat.yml file
-default:
-    suites:
-        page_features:
-            paths:    [ %paths.base%/features ]
-            contexts: [ PageContext ]
-            filters:
-                role: desktop user
-    formatters:
-        pretty:
-    extensions:
-        Behat\MinkExtension:
-            base_url: http://magento-behat.dev/
-            goutte:
-                server_parameters: ~
-            selenium2:
-                wd_host: 'http://localhost:4444/wd/hub'
-            browser_name: chrome
-            default_session: selenium2
-            sessions:
-                desktop_session:
-                    selenium2:
-                      browser: chrome
-                      capabilities:
-                        extra_capabilities:
-                          chromeOptions:
-                            args:
-                              - "--start-maximized"
-tablet_large:
-    suites:
-        page_features:
-            paths:    [ %paths.base%/features ]
-            contexts: [ PageContext ]
-            filters:
-                role: tablet large user
-    formatters:
-        pretty:
-    extensions:
-        Behat\MinkExtension:
-            base_url: http://magento-behat.dev/
-            goutte:
-                server_parameters: ~
-            selenium2:
-                wd_host: 'http://localhost:4444/wd/hub'
-            browser_name: chrome
-            default_session: selenium2
-            sessions:
-                desktop_session:
-                  selenium2:
-                    browser: chrome
-                    capabilities:
-                      extra_capabilities:
-                        chromeOptions:
-                          mobileEmulation:
-                            deviceMetrics:
-                              width: 1024
-                              height: 768
-                              pixelRatio: 1.5
-tablet_small:
-    suites:
-        page_features:
-            paths:    [ %paths.base%/features ]
-            contexts: [ PageContext ]
-            filters:
-                role: tablet small user
-    formatters:
-        pretty:
-    extensions:
-        Behat\MinkExtension:
-            base_url: http://magento-behat.dev/
-            goutte:
-                server_parameters: ~
-            selenium2:
-                wd_host: 'http://localhost:4444/wd/hub'
-            browser_name: chrome
-            default_session: selenium2
-            sessions:
-                desktop_session:
-                  selenium2:
-                    browser: chrome
-                    capabilities:
-                      extra_capabilities:
-                        chromeOptions:
-                          mobileEmulation:
-                            deviceName: "Apple iPad"
-mobile:
-    suites:
-        page_features:
-            paths:    [ %paths.base%/features ]
-            contexts: [ PageContext ]
-            filters:
-                role: mobile user
-    formatters:
-        pretty:
-    extensions:
-        Behat\MinkExtension:
-            base_url: http://magento-behat.dev/
-            goutte:
-                server_parameters: ~
-            selenium2:
-                wd_host: 'http://localhost:4444/wd/hub'
-            browser_name: chrome
-            default_session: selenium2
-            sessions:
-                desktop_session:
-                  selenium2:
-                    browser: chrome
-                    capabilities:
-                      extra_capabilities:
-                        chromeOptions:
-                          mobileEmulation:
-                            deviceName: "Apple iPhone 6"
+    default:
+        suites:
+            page_features:
+                paths:    [ %paths.base%/features ]
+                contexts: [ PageContext ]
+                filters:
+                    role: desktop user
+        formatters:
+            pretty:
+        extensions:
+            Behat\MinkExtension:
+                base_url: http://magento-behat.dev/
+                goutte:
+                    server_parameters: ~
+                selenium2:
+                    wd_host: 'http://localhost:4444/wd/hub'
+                browser_name: chrome
+                default_session: selenium2
+                sessions:
+                    desktop_session:
+                        selenium2:
+                          browser: chrome
+                          capabilities:
+                            extra_capabilities:
+                              chromeOptions:
+                                args:
+                                  - "--start-maximized"
+    tablet_large:
+        suites:
+            page_features:
+                paths:    [ %paths.base%/features ]
+                contexts: [ PageContext ]
+                filters:
+                    role: tablet large user
+        formatters:
+            pretty:
+        extensions:
+            Behat\MinkExtension:
+                base_url: http://magento-behat.dev/
+                goutte:
+                    server_parameters: ~
+                selenium2:
+                    wd_host: 'http://localhost:4444/wd/hub'
+                browser_name: chrome
+                default_session: selenium2
+                sessions:
+                    desktop_session:
+                      selenium2:
+                        browser: chrome
+                        capabilities:
+                          extra_capabilities:
+                            chromeOptions:
+                              mobileEmulation:
+                                deviceMetrics:
+                                  width: 1024
+                                  height: 768
+                                  pixelRatio: 1.5
+    tablet_small:
+        suites:
+            page_features:
+                paths:    [ %paths.base%/features ]
+                contexts: [ PageContext ]
+                filters:
+                    role: tablet small user
+        formatters:
+            pretty:
+        extensions:
+            Behat\MinkExtension:
+                base_url: http://magento-behat.dev/
+                goutte:
+                    server_parameters: ~
+                selenium2:
+                    wd_host: 'http://localhost:4444/wd/hub'
+                browser_name: chrome
+                default_session: selenium2
+                sessions:
+                    desktop_session:
+                      selenium2:
+                        browser: chrome
+                        capabilities:
+                          extra_capabilities:
+                            chromeOptions:
+                              mobileEmulation:
+                                deviceName: "Apple iPad"
+    mobile:
+        suites:
+            page_features:
+                paths:    [ %paths.base%/features ]
+                contexts: [ PageContext ]
+                filters:
+                    role: mobile user
+        formatters:
+            pretty:
+        extensions:
+            Behat\MinkExtension:
+                base_url: http://magento-behat.dev/
+                goutte:
+                    server_parameters: ~
+                selenium2:
+                    wd_host: 'http://localhost:4444/wd/hub'
+                browser_name: chrome
+                default_session: selenium2
+                sessions:
+                    desktop_session:
+                      selenium2:
+                        browser: chrome
+                        capabilities:
+                          extra_capabilities:
+                            chromeOptions:
+                              mobileEmulation:
+                                deviceName: "Apple iPhone 6"
 
 
 # To do
