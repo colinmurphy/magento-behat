@@ -32,11 +32,11 @@ For running Behat 3 tests in Magento 1. In beta so info to follow.
 # Behat.yml file
 default:
     suites:
-        page_element_features:
+        page_features:
             paths:    [ %paths.base%/features ]
-            contexts: [ PageElementsContext ]
+            contexts: [ PageContext ]
             filters:
-                "tags: @page_elements"
+                role: desktop user
     formatters:
         pretty:
     extensions:
@@ -57,7 +57,26 @@ default:
                           chromeOptions:
                             args:
                               - "--start-maximized"
-                tablet_large_session:
+tablet_large:
+    suites:
+        page_features:
+            paths:    [ %paths.base%/features ]
+            contexts: [ PageContext ]
+            filters:
+                role: tablet large user
+    formatters:
+        pretty:
+    extensions:
+        Behat\MinkExtension:
+            base_url: http://magento-behat.dev/
+            goutte:
+                server_parameters: ~
+            selenium2:
+                wd_host: 'http://localhost:4444/wd/hub'
+            browser_name: chrome
+            default_session: selenium2
+            sessions:
+                desktop_session:
                   selenium2:
                     browser: chrome
                     capabilities:
@@ -68,7 +87,26 @@ default:
                               width: 1024
                               height: 768
                               pixelRatio: 1.5
-                tablet_small_session:
+tablet_small:
+    suites:
+        page_features:
+            paths:    [ %paths.base%/features ]
+            contexts: [ PageContext ]
+            filters:
+                role: tablet small user
+    formatters:
+        pretty:
+    extensions:
+        Behat\MinkExtension:
+            base_url: http://magento-behat.dev/
+            goutte:
+                server_parameters: ~
+            selenium2:
+                wd_host: 'http://localhost:4444/wd/hub'
+            browser_name: chrome
+            default_session: selenium2
+            sessions:
+                desktop_session:
                   selenium2:
                     browser: chrome
                     capabilities:
@@ -76,7 +114,26 @@ default:
                         chromeOptions:
                           mobileEmulation:
                             deviceName: "Apple iPad"
-                mobile_session:
+mobile:
+    suites:
+        page_features:
+            paths:    [ %paths.base%/features ]
+            contexts: [ PageContext ]
+            filters:
+                role: mobile user
+    formatters:
+        pretty:
+    extensions:
+        Behat\MinkExtension:
+            base_url: http://magento-behat.dev/
+            goutte:
+                server_parameters: ~
+            selenium2:
+                wd_host: 'http://localhost:4444/wd/hub'
+            browser_name: chrome
+            default_session: selenium2
+            sessions:
+                desktop_session:
                   selenium2:
                     browser: chrome
                     capabilities:
@@ -92,8 +149,10 @@ default:
 - Add behat.yml script
 - Move features test as sample and add shell script to rename them etc.
 - Add documentaion
+- Setup mailcatcher
 
 - Account Features
+- Category Features
 - Cart Features
 - Checkout Features
 - Product Features
