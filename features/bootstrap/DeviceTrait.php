@@ -8,6 +8,17 @@ trait DeviceTrait
     protected static $_device = "desktop";
 
     /**
+     * @var array
+     */
+    protected static $_deviceTags
+        = [
+            "desktop",
+            "tablet_large",
+            "tablet_small",
+            "mobile",
+        ];
+
+    /**
      * @return string
      */
     public function getDevice()
@@ -45,26 +56,12 @@ trait DeviceTrait
      */
     protected static function _setDevice($object)
     {
-        if ($object->hasTag("desktop")) {
-            static::$_device = "tablet_large";
-            return true;
+        foreach (static::$_deviceTags as $device) {
+            if ($object->hasTag($device)) {
+                static::$_device = $device;
+                return true;
+            }
         }
-
-        if ($object->hasTag("tablet_large")) {
-            static::$_device = "tablet_large";
-            return true;
-        }
-
-        if ($object->hasTag("tablet_small")) {
-            static::$_device = "tablet_small";
-            return true;
-        }
-
-        if ($object->hasTag("mobile")) {
-            static::$_device = "mobile";
-            return true;
-        }
-
         return false;
     }
 }

@@ -3,15 +3,22 @@ use Behat\MinkExtension\Context\MinkContext;
 
 class PageContext extends MinkContext
 {
-
     use MagentoTrait, ClickTrait, ConfigTrait, DeviceTrait, VisibilityTrait;
+
+    /**
+     * @param string $configFilePath
+     */
+    public function __construct($configFilePath)
+    {
+        $this->setConfigFilePath($configFilePath);
+    }
 
     /**
      * @return string
      */
     public function getConfigPrefixPath()
     {
-        return "studioforty9_behat/page_elements_" . $this->getDevice() . "/";
+        return  $this->getDevice() . "/page_elements/";
     }
 
     /**
