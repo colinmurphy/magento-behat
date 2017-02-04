@@ -55,6 +55,15 @@ class PageContext extends MinkContext
     }
 
     /**
+     * @When I follow the main account link
+     */
+    public function iFollowTheMainAccountLink()
+    {
+        $path = $this->getConfigPrefixPath() . "account_main_link";
+        return $this->clickElement($this->getCssSelector($path));
+    }
+
+    /**
      * @Then I be on the account page
      */
     public function iBeOnTheAccountPage()

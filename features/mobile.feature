@@ -8,7 +8,7 @@ Feature: Checking Page Elements for Tablet Landscape
 
   Scenario: Checking core page elements are visible on a page
     Then I should see a logo
-    Then I should the menu bar
+    Then I should see the menu bar
     Then I should see the page title
     Then I should see the footer links
     Then I should see the footer subscription form
@@ -21,7 +21,7 @@ Feature: Checking Page Elements for Tablet Landscape
 
   Scenario: Checking navigation menu works
     When I click the navigation link
-    Then I should the navigation
+    Then I should see the navigation
     When I click the navigation link
     Then I should not see the navigation
 

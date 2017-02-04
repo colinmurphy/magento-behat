@@ -48,6 +48,14 @@ trait DeviceTrait
         return self::_setDevice($scenario);
     }
 
+    /**
+     * @param array $tags
+     */
+    protected function _setDeviceTags(array $tags)
+    {
+        self::$_deviceTags = $tags;
+    }
+
 
     /**
      * @param $object
