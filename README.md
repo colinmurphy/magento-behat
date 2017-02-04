@@ -233,16 +233,19 @@ This file contains configuration paths to be used with Behat. See the PageContex
 
 # To do
 
-- Create a bash script for setup.
-- Setup composer, modman and update readme
-- Add behat.yml script
-- Move features test as sample and add shell script to rename them etc.
-- Add documentaion
-- Setup mailcatcher
+# Tests
+- Account
+- Cart
+- Checkout
+- Search
+- Category
+- Simple, Grouped & Configurable Product Context
 
-- Account Features
-- Category Features
-- Cart Features
-- Checkout Features
-- Product Features
-- Search Features
+# General
+- Setup mailcatcher
+- Documentation
+- Create a bash script for setup which creates composer.yml, behat and behat-config.yml files
+- Create a composer.json file and modman file
+- Add to packages.firegento.com
+
+
