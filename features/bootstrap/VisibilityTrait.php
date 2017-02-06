@@ -1,5 +1,8 @@
 <?php
 
+use  \Behat\Mink\Exception\ElementNotFoundException as ElementNotFoundException,
+    \Behat\Mink\Exception\ExpectationException as ExpectationException;
+
 trait VisibilityTrait
 {
     /**
@@ -31,15 +34,13 @@ trait VisibilityTrait
             if ($node->isVisible()) {
                 return true;
             }
-            throw new \Behat\Mink\Exception\ElementNotFoundException($this->getSession(), 'css', 'selector', $selector);
+            throw new ElementNotFoundException($this->getSession(), 'css', 'selector', $selector);
         }
 
         if (!$node->isVisible()) {
             return true;
         }
-        throw new \Behat\Mink\Exception\ExpectationException(
-            "Element $selector was found to be visible", $this->getSession()
-        );
 
+        throw new ExpectationException("Element $selector was found to be visible", $this->getSession());
     }
 }

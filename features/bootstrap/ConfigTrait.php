@@ -22,7 +22,7 @@ trait ConfigTrait
      */
     public function getConfigFilePath()
     {
-       return $this->_configFilePath;
+        return $this->_configFilePath;
     }
 
 
@@ -35,8 +35,10 @@ trait ConfigTrait
     public function getCssSelector($path, $delimiter = "/")
     {
         $filePath = $this->getConfigFilePath();
-        if (! $filePath) {
-            throw new ExpectationException("Behat context parameter for configFilePath needs to be set.", $this->getSession());
+        if (!$filePath) {
+            throw new ExpectationException(
+                "Behat context parameter for configFilePath needs to be set.", $this->getSession()
+            );
         }
         $config = $this->getConfig($filePath);
         $paths = explode($delimiter, $path);
@@ -54,7 +56,7 @@ trait ConfigTrait
     {
         $value = $config;
         foreach ($args as $key) {
-            if (! array_key_exists($key, $value)) {
+            if (!array_key_exists($key, $value)) {
                 throw new ExpectationException("Configuration path '$key' was not found", $this->getSession());
             }
             $value = $value[$key];
@@ -73,9 +75,15 @@ trait ConfigTrait
     public function getConfig($filePath)
     {
         try {
-            $config = Yaml::parse(file_get_contents($filePath));
+            $content = file_get_contents($filePath);
         } catch (\Exception $e) {
-            throw new ExpectationException("Cannot parse yaml config file $filePath", $this->getSession());
+            throw new ExpectationException($e->getMessage(), $this->getSession());
+        }
+
+        try {
+            $config = Yaml::parse($content);
+        } catch (\Exception $e) {
+            throw new ExpectationException("Cannot parse yaml file '$filePath'", $this->getSession());
         }
         return $config;
     }
