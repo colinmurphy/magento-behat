@@ -1,5 +1,5 @@
 @desktop @page_elements @javascript
-Feature: Checking Page Elements for Desktop
+Feature: Checking Page Elements for desktop
   As an desktop user
   I should see the core page elements and check that the core functionality of a page works.
 

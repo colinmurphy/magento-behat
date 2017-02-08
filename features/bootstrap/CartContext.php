@@ -15,7 +15,7 @@ class CartContext extends PageContext
      */
     public function getConfigPrefixPath()
     {
-        return  $this->getDevice() . "/cart/";
+        return  "cart/";
     }
 
     /**
@@ -33,7 +33,10 @@ class CartContext extends PageContext
      */
     public function iAddAProductToTheCart()
     {
-        throw new PendingException();
+        $path = $this->getConfigPrefixPath() . "add_button";
+        $selector = $this->getCssSelector($path);
+        $this->getSession()->getPage()->find("css", $selector)->click();
+        $this->iWaitSeconds(10);
     }
 
     /**
@@ -41,7 +44,7 @@ class CartContext extends PageContext
      */
     public function iShouldBeOnTheCartPage()
     {
-        throw new PendingException();
+        return $this->assertSession()->addressEquals("/checkout/cart/");
     }
 
     /**
