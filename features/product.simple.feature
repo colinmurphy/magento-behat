@@ -1,5 +1,5 @@
 @product @simple_product @javascript
-Feature: Checking Simple Product Functionality
+Feature: Testing Simple Product Functionality
   As an simple product user
   I should be able to use the Magento simple product functionality
 
@@ -24,7 +24,6 @@ Feature: Checking Simple Product Functionality
   Scenario: Add a product to the cart
     When I add the product to the cart
     Then I should be on the cart page
-    And I should see the success message
     And I should see a subtotal of "9.99"
     And I should see a tax of "2.30"
     And I should see a grand total of "12.99"

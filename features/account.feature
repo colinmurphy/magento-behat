@@ -1,15 +1,15 @@
-@product @simple_product @javascript
-Feature: Checking Account Functionality
+@account @javascript
+Feature: Testing Account Functionality
   As an account user
   I should be able to use the Magento account functionality
 
-  Scenario: Login as a Customer
+  Scenario: Logging in as a customer
     When I am on the login page
     And I login in as a customer
     Then I should be on the account dashboard page
     And I should see the login success message
 
-  Scenario: Registering a Customer
+  Scenario: Registering a customer
     When I am on the create account page
     And I fill in the following:
       | First Name       | Colin                     |
@@ -17,15 +17,13 @@ Feature: Checking Account Functionality
       | Email Address    | register@studioforty9.com |
       | Password         | password123               |
       | Confirm Password | password123               |
+    And I create an account
     Then I should be on the account dashboard page
 
-
-  Scenario: Add A New Address
-    When I am on the login page
-    And I login in as a customer
-    Then I should be on the account dashboard page
-    And I click Address Book
-    And I click the add new address button
+  Scenario: Adding a new address
+    When I am logged in a customer
+    And I go to the address book page
+    And I add a new address
     And I fill in the following:
       | First Name      | Colin           |
       | Last Name       | Murphy          |
@@ -36,13 +34,11 @@ Feature: Checking Account Functionality
       | State/Province  | Cork            |
       | Zip/Postal Code | 021             |
       | Country         | Ireland         |
-    And I click Save Address
+    And I save my address
     Then the address should be saved
 
-  Scenario: Checking Orders
-    When I am on the login page
-    And I login in as a customer
-    Then I should be on the account dashboard page
-    And I click My Orders
-    Then I should see the order history
+  Scenario: Checking my orders history
+    When I am logged in a customer
+    And I go to the orders page
+    Then I should see my order history
 

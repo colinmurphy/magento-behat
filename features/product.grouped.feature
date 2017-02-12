@@ -1,5 +1,5 @@
 @product @grouped_product @javascript
-Feature: Checking Grouped Product Functionality
+Feature: Testing Grouped Product Functionality
   As an grouped product user
   I should be able to use the Magento grouped product functionality
 
@@ -25,7 +25,6 @@ Feature: Checking Grouped Product Functionality
     When I add a quantity of 1 for "Simple Product"
     Then I add the product to the cart
     Then I should be on the cart page
-    And I should see the success message
     And I should see a subtotal of "9.99"
     And I should see tax of "2.30"
     And I should see a grand total of "12.99"

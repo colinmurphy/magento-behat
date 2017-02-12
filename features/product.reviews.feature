@@ -4,7 +4,7 @@ Feature: Checking Product Review Functionality
   I should be able to use the Magento review functionality
 
   Background:
-    Given I am logged in
+    Given I am logged in a customer
     And I am on the product page with reviews
 
   Scenario: Checking Reviews
@@ -17,5 +17,5 @@ Feature: Checking Product Review Functionality
       | Summary of your review    | Awesome Product         |
       | Whats your nickname       | Colin                   |
     And I submit the review
-    And I then should see a success message
+    And I then the review should be submitted
 

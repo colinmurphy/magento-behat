@@ -1,7 +1,7 @@
-@product @grouped_product @javascript
-Feature: Checking Grouped Product Functionality
-  As an grouped product user
-  I should be able to use the Magento grouped product functionality
+@product @configurable_product @javascript
+Feature: Testing Configurable Product Functionality
+  As an configurable product user
+  I should be able to use the Magento configurable product functionality
 
   Background:
     Given I am on a configurable product page
@@ -26,7 +26,6 @@ Feature: Checking Grouped Product Functionality
     And I select the size "Large"
     Then I add the product to the cart
     Then I should be on the cart page
-    And I should see the success message
     And I should see a subtotal of "9.99"
     And I should see a tax of "2.30"
     And I should see a grand total of "12.99"
